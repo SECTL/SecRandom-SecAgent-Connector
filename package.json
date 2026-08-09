@@ -1,0 +1,8 @@
+{
+  "name": "secrandom-secagent-connector",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": { "build": "node scripts/build.mjs" },
+  "devDependencies": { "adm-zip": "^0.5.18", "esbuild": "^0.25.12" }
+}
