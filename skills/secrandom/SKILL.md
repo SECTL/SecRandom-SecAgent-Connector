@@ -9,14 +9,15 @@ description: 操作本机 SecRandom 名单和抽人功能；调用任何 SecRand
 
 ## 必须遵守
 
-调用以下任一工具前，必须先读取本 Skill：
+修改名单前，必须先读取本 Skill：
 
 - `secrandom__list_students`
 - `secrandom__upsert_student`
 - `secrandom__remove_student`
-- `secrandom__draw_students`
 
 工具通过 `secagent__call_hidden_tool` 调用。名单变更前应向用户确认将要新增、更新或删除的内容；不要把用户没有提供的名单字段臆造出来。
+
+`secrandom__draw_students` 是可直接调用的普通工具，不要求先读取本 Skill。
 
 ## 抽人
 

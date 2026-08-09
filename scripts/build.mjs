@@ -12,5 +12,6 @@ fs.cpSync(path.join(root, "skills"), path.join(output, "skills"), { recursive: t
 for (const file of ["secagent-plugin.json", "README.md"]) fs.copyFileSync(path.join(root, file), path.join(output, file));
 const zip = new AdmZip();
 zip.addLocalFolder(output);
-zip.writeZip(path.join(output, "secrandom-0.1.0.zip"));
-console.log("Created dist/secrandom-0.1.0.zip");
+const version = JSON.parse(fs.readFileSync(path.join(root, "secagent-plugin.json"), "utf8")).version;
+zip.writeZip(path.join(output, `secrandom-${version}.zip`));
+console.log(`Created dist/secrandom-${version}.zip`);

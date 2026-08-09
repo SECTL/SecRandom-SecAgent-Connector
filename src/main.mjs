@@ -53,8 +53,8 @@ export async function activate(api) {
 
     api.registerTool({
       name: "draw_students",
-      description: "从 SecRandom 抽取学生；调用前必须读取 secrandom Skill。",
-      hidden: true,
+      description: "从 SecRandom 抽取学生。flash 仅抽 1 人并使用原通知渠道；result_only 只返回结果不发送通知。支持按标签、学号和姓名指定范围。",
+      hidden: false,
       inputSchema: {
         type: "object", additionalProperties: false, required: ["mode"],
         properties: {

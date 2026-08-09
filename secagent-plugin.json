@@ -2,7 +2,7 @@
   "apiVersion": 1,
   "id": "secrandom",
   "name": "SecRandom 联动",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "main.mjs",
   "description": "通过本机 HTTP 接口操作 SecRandom 名单和抽人功能。",
   "author": "SECTL",
