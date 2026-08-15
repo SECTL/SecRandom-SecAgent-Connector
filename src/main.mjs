@@ -79,10 +79,12 @@ export async function activate(api) {
       connected = true; registerTools(); api.setStatus(`已连接 SecRandom：${endpoint}`);
     } catch (error) {
       connected = false; unregisterTools();
-      api.setStatus(`等待 SecRandom：${error instanceof Error ? error.message : String(error)}`, "error");
+      // The connector is still running normally while SecRandom is offline.
+      // Keep the plugin ready and expose the connection state in the message.
+      api.setStatus(`等待 SecRandom：${error instanceof Error ? error.message : String(error)}`);
     }
   }
   await connect();
   const timer = setInterval(() => { void connect(); }, 5000);
-  return () => { clearInterval(timer); unregisterTools(); if (connected) api.setStatus("SecRandom 已断开", "error"); };
+  return () => { clearInterval(timer); unregisterTools(); if (connected) api.setStatus("SecRandom 已断开"); };
 }
