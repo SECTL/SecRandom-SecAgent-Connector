@@ -3,7 +3,7 @@ name: secrandom
 description: 操作本机 SecRandom 名单和抽人功能；调用任何 SecRandom 隐藏工具前必须先读取本 Skill。
 ---
 
-# SecRandom 联动
+# SecRandom 点名联动
 
 本 Skill 适用于用户明确要求读取、录入、修改名单或抽取 SecRandom 学生时。
 
